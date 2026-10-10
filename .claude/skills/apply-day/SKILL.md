@@ -132,6 +132,13 @@ From `config/settings.json` → `targets`, `eligibility`, and the skip notes:
 - **Scam screen**: `config/spec.md` → "Scam and data-harvesting screen", posting checks now, form
   checks before typing.
 - **Live**: the req is still open on the employer's own page.
+- **Requirement attestations on the form**: a required yes/no qualification question phrased like
+  "This role requires X. Do you meet this requirement?" whose truthful answer is No → SKIP the
+  role, one line, no submit. The truthful answer comes from `profile.json`, `answers.md`, the
+  resume, and saved feedback rules (e.g. Node.js is No: REST APIs and Cloudflare Workers are not
+  Node.js). NEEDS HUMAN only when the underlying fact is genuinely uncertain (none of those
+  sources settles it). Check the form's questions before filling anything else, so a skip costs
+  no typing.
 
 Hard eligibility mismatch → SKIP (one line), not NEEDS HUMAN.
 
